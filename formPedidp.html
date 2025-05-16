@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>pedido</title>
+	<style>
+		body {
+			background-color: #cee4f1;
+			font-family: "Ink Free", cursive;
+			margin: 0;
+			padding: 0;
+		}
+
+		marquee {
+			font-size: 3rem;
+			color: #2c3e50;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+
+		form {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 20px;
+		}
+
+		fieldset {
+			width: 50%;
+			border-radius: 25px;
+			border: 2px solid #8B4513;
+			background-color: #ffffffcc;
+			padding: 30px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+			text-align: left;
+		}
+
+		fieldset img {
+			display: block;
+			margin: 0 auto 20px;
+			border-radius: 15px;
+		}
+
+		.form-group {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 15px;
+		}
+
+		.form-group label {
+			width: 40%;
+			text-align: right;
+			margin-right: 10px;
+			font-size: 1.1rem;
+		}
+
+		.form-group input[type="text"] {
+			width: 50%;
+			padding: 8px;
+			border-radius: 10px;
+			border: 1px solid #aaa;
+			text-align: center;
+			font-size: 1rem;
+		}
+
+		.button-group {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"] {
+			margin: 10px 5px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 12px;
+			background-color: #3498db;
+			color: white;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+		}
+
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover {
+			background-color: #2980b9;
+			transform: scale(1.05);
+		}
+
+		input[type="submit"]:active,
+		input[type="reset"]:active,
+		input[type="button"]:active {
+			transform: scale(0.95);
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<font face="Ink Free" size="10"><b>
+			<br>
+			<marquee scrolldelay="6">P&nbsp;&nbsp;&nbsp; R&nbsp;&nbsp;&nbsp; O&nbsp;&nbsp;&nbsp; D&nbsp;&nbsp;&nbsp; U&nbsp;&nbsp;&nbsp; C &nbsp;&nbsp;&nbsp; T&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;S</marquee>
+		</font>
+		<br>
+		<font face="Ink Free" size="4"><b>
+			<form method="POST" action="insertarProducto.php">
+				<fieldset>
+					<img src="logo.png" width="300" height="300">
+
+					<div class="form-group">
+						<label for="ID_PEDIDO">ID_PEDIDO:</label>
+						<input type="text" name="ID_PEDIDO">
+					</div>
+
+					<div class="form-group">
+						<label for="ID_CLIENTE">ID_CLIENTE:</label>
+						<input type="text" name="ID_CLIENTE">
+					</div>
+
+					<div class="form-group">
+						<label for="FECHA_PEDIDO">FECHA_PEDIDO:</label>
+						<input type="text" name="FECHA_PEDIDO">
+					</div>
+
+					<div class="form-group">
+						<label for="TIPO_DE_ENTREGA">TIPO_DE_ENTREGA:</label>
+						<input type="text" name="TIPO_DE_ENTREGA">
+					</div>
+
+					<div class="form-group">
+						<label for="TOTAL">TOTAL:</label>
+						<input type="text" name="TOTAL">
+					</div>
+
+					
+
+					<div class="button-group">
+						<input type="submit" value="ENVIAR DATOS">
+						<input type="reset" value="BORRAR DATOS">
+						<a href="menuDetallePedido.html">
+							<input type="button" name="REGRESAR" value="REGRESAR">
+						</a>
+					</div>
+				</fieldset>
+			</form>
+	</center>
+</body>
+</html>

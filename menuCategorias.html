@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Categorías - CUXSPORTS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      background-color: #f4f4f4;
+    }
+
+    .nav-wrapper {
+      padding: 40px;
+      background: #e8ded2; /* nude */
+      border-bottom: 2px solid #ccc;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-wrapper h1 {
+      font-size: 48px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .custom-btn {
+      padding: 12px 30px;
+      background: #333;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .custom-btn:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 50px;
+      justify-items: center;
+      align-items: center;
+      background: #dcdcdc; /* gris claro */
+      border-radius: 20px;
+      margin: 30px;
+    }
+
+    nav a {
+      display: block;
+      width: 200px;
+      height: 260px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: white;
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover img {
+      transform: scale(1.1);
+    }
+
+    nav a span {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      font-size: 20px;
+      color: white;
+      font-weight: 600;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <div class="nav-wrapper">
+    <h1>CUXSORTS</h1>
+    <a href="menuPrincipal.html">
+      <button class="custom-btn">VOLVER A MENU</button>
+    </a>
+  </div>
+
+  <!-- Primer grupo de categorías -->
+  <nav>
+    <a href="categoriaCC.html">
+      <img src="cyc.png" alt="CABEZA Y CUELLO">
+      <span>CABEZA Y CUELLO</span>
+    </a>
+    <a href="categoriaBM.html">
+      <img src="bym.png" alt="BRAZOS Y MANOS">
+      <span>BRAZOS Y MANOS</span>
+    </a>
+    <a href="categoriaCP.html">
+      <img src="CYP.png" alt="CINTURA Y PIERNAS">
+      <span>CINTURA Y PIERNAS</span>
+    </a> 
+  <a href="categoriaComplementos.html">
+      <img src="c.png" alt="Complementos">
+      <span>COMPLEMENTOS</span>
+    </a></nav>
+  
+  
+
+  
+
+</body>
+</html>

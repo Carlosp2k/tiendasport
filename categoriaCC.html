@@ -1,0 +1,311 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CATEGORIA- CABEZA Y CUELLO</title>
+        <style>
+            /* Estilos globales */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Georgia', serif;
+                background: linear-gradient(135deg, #b0bec5, #d5dbdb, #d7ccc8 );
+                background-size: 100% 200%;
+                background-position: top;
+                color: #ffffff;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 36px;
+                color: #ffffff;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tamaño de las columnas ajustado */
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .offer {
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                background: #ffffff;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            }
+
+            .offer:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .offer-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-bottom: 3px solid #f4a261;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+
+            .offer:hover .offer-img {
+                transform: scale(1.1);
+                filter: brightness(1.1);
+            }
+
+            .offer-description {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .offer-title {
+                font-size: 24px;
+                color: #d2691e;
+                font-weight: bold;
+                margin: 0 0 10px;
+            }
+
+            .offer-hook {
+                font-size: 16px;
+                color: #6b4226;
+                margin: 10px 0;
+            }
+
+            .cart-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            .price {
+                font-size: 28px;
+                font-weight: bold;
+                color: #8b0000;
+                text-shadow: 1px 1px 5px rgba(139, 0, 0, 0.4);
+            }
+
+            .add-to-cart-btn {
+                background-color: #95c6c0;
+                color: white;
+                font-weight: bold;
+                padding: 10px 20px;
+                border-radius: 30px;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+                box-shadow: 0 4px 8px rgba(244, 162, 97, 0.3);
+                transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            }
+
+            .add-to-cart-btn:hover {
+                background-color: #8fb0b9;
+                transform: scale(1.05) translateY(-3px);
+                box-shadow: 0 6px 12px rgba(244, 162, 97, 0.4);
+            }
+
+            .add-to-cart-btn:active {
+                background-color: #8fb0b9;
+                transform: scale(0.95) translateY(2px);
+            }
+
+            /* Estilo para el producto seleccionado */
+            .selected {
+                border: 3px solid #f4a261;
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(244, 162, 97, 0.7);
+            }
+
+            /* Botones al final */
+            .buttons-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+                gap: 20px;
+            }
+
+            .button {
+                background-color: #71797E;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 30px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+
+            .button:hover {
+                background-color: #B2BEB5;
+                transform: scale(1.05);
+            }
+
+            .button:active {
+                background-color: #B2BEB5;
+                transform: scale(0.95);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>C U X S P O R T S  </h1> <center> <br> CABEZA  Y  CUELLO </center>
+<!-- SCRUNCHIES -->
+<div class="offer" onclick="selectProduct(this)">
+    <img src="scrunch_blanco.jpg" alt="Scrunch Blanco Satinado" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Scrunch Blanco Satinado</h2>
+        <p class="offer-hook">Ideal para entrenamientos; sujeta sin maltratar el cabello.</p>
+        <div class="cart-section">
+            <span class="price">$30.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<div class="offer" onclick="selectProduct(this)">
+    <img src="scrunch_negro.jpg" alt="Scrunch Negro Tipo Toalla" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Scrunch Negro Tipo Toalla</h2>
+        <p class="offer-hook">Absorbe el sudor; combina con uniformes oscuros.</p>
+        <div class="cart-section">
+            <span class="price">$35.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<div class="offer" onclick="selectProduct(this)">
+    <img src="scrunch_neon.jpg" alt="Scrunch Neón" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Scrunch Neón</h2>
+        <p class="offer-hook">Accesorio vistoso para partidos temáticos.</p>
+        <div class="cart-section">
+            <span class="price">$32.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<!-- HEADBANDS -->
+<div class="offer" onclick="selectProduct(this)">
+    <img src="headband_ancha.jpg" alt="Headband Ancha" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Headband Tela Ancha</h2>
+        <p class="offer-hook">Evita que el sudor llegue a tus ojos en pleno juego.</p>
+        <div class="cart-section">
+            <span class="price">$40.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<div class="offer" onclick="selectProduct(this)">
+    <img src="headband_nike.jpg" alt="Headband Tipo Cinta" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Headband Tipo Cinta</h2>
+        <p class="offer-hook">Estilo deportivo tipo Nike o Under Armour.</p>
+        <div class="cart-section">
+            <span class="price">$45.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<div class="offer" onclick="selectProduct(this)">
+    <img src="headband_presion.jpg" alt="Headband de Presión" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Headband de Presión</h2>
+        <p class="offer-hook">Ideal para cascos y looks atléticos.</p>
+        <div class="cart-section">
+            <span class="price">$48.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<!-- BUCALES -->
+<div class="offer" onclick="selectProduct(this)">
+    <img src="bucal_simple.jpg" alt="Bucal Transparente" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Bucal Transparente</h2>
+        <p class="offer-hook">Protección básica para dientes y encías.</p>
+        <div class="cart-section">
+            <span class="price">$50.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<div class="offer" onclick="selectProduct(this)">
+    <img src="bucal_diseño.jpg" alt="Bucal Personalizado" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Bucal Personalizado</h2>
+        <p class="offer-hook">Colores o logos que combinan con tu uniforme.</p>
+        <div class="cart-section">
+            <span class="price">$65.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+<div class="offer" onclick="selectProduct(this)">
+    <img src="bucal_casco.jpg" alt="Bucal con Correa" class="offer-img">
+    <div class="offer-description">
+        <h2 class="offer-title">Bucal con Correa</h2>
+        <p class="offer-hook">Se sujeta al casco; esencial para americano.</p>
+        <div class="cart-section">
+            <span class="price">$60.00</span>
+            <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+      
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Botones al final -->
+        <div class="buttons-container">
+            <button class="button" onclick="window.location.href = 'menuCategorias.html';">Volver a categorías</button>
+            <button class="button" onclick="window.location.href = '#';">Volver al principio</button>
+        </div>
+        <br><br>
+        <script>
+            function selectProduct(element) {
+                document.querySelectorAll('.offer').forEach(offer => {
+                    offer.classList.remove('selected');
+                });
+                element.classList.add('selected');
+            }
+
+            function addToCart(event) {
+                // Prevenir que el evento de clic se propague al padre (div .offer)
+                event.stopPropagation();
+
+                // Obtener el botón de agregar al carrito
+                const button = event.target;
+                const product = button.closest('.offer');
+                
+                // Obtener las coordenadas del botón en la página
+                const buttonRect = button.getBoundingClientRect();
+            }
+        </script>
+    </body>
+    </html>
+

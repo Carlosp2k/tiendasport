@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENÚ DE CUENTAS </title>
+  <style>
+    :root {
+      --background-color: #f4e1d2; /* Color crema */
+      --font-color: #5b4033; /* Marrón oscuro */
+      --font-color-active: #d17b47; /* Marrón claro */
+      --font-primary: 'Fira Sans', sans-serif;
+      --transition-length: 0.8s;
+      --menu-icon-color: #5b4033;
+    }
+
+    body {
+      background-color: var(--background-color);
+      font-family: var(--font-primary);
+      margin: 0;
+    }
+
+    .site-content {
+      max-width: 1100px;
+      height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .site-content__headline {
+      font-weight: 700;
+      color: var(--font-color);
+      font-size: calc(2vw + 20px);
+      text-align: center;
+    }
+
+    .menu-icon {
+      --size: 30px;
+      height: var(--size);
+      width: var(--size);
+      position: fixed;
+      z-index: 2;
+      left: 50px;
+      top: 30px;
+      cursor: pointer;
+    }
+
+    .menu-icon__line {
+      height: 2px;
+      width: var(--size);
+      display: block;
+      background-color: var(--menu-icon-color);
+      margin-bottom: 4px;
+      transition: transform 0.2s ease, background-color 0.5s ease;
+    }
+
+    .menu-icon__line-left {
+      width: calc(var(--size) / 2);
+    }
+
+    .menu-icon__line-right {
+      width: calc(var(--size) / 2);
+      float: right;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(245, 231, 220, 0.95); /* Color pastel */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: visibility 0.3s, opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .nav__content {
+      text-align: center;
+    }
+
+    .nav__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav__list-item {
+      margin: 15px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .nav__list-item a {
+      text-decoration: none;
+      color: var(--font-color);
+      font-size: calc(2vw + 10px);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav__list-item a:hover {
+      color: var(--font-color-active);
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--font-color);
+      background-color: #ffffff;
+      border: 2px solid var(--font-color);
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: var(--font-color-active);
+      color: #ffffff;
+      border-color: var(--font-color-active);
+    }
+
+    body.nav-active .menu-icon__line {
+      background-color: var(--font-color-active);
+      transform: translateX(0px) rotate(-45deg);
+    }
+
+    body.nav-active .menu-icon__line-left {
+      transform: translateX(1px) rotate(45deg);
+    }
+
+    body.nav-active .menu-icon__line-right {
+      transform: translateX(-2px) rotate(45deg);
+    }
+
+    body.nav-active .nav {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    body.nav-active .nav__list-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    body.nav-active .nav__list-item:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+
+    body.nav-active .nav__list-item:nth-child(2) {
+      transition-delay: 0.4s;
+    }
+
+    body.nav-active .nav__list-item:nth-child(3) {
+      transition-delay: 0.6s;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-icon">
+    <span class="menu-icon__line menu-icon__line-left"></span>
+    <span class="menu-icon__line"></span>
+    <span class="menu-icon__line menu-icon__line-right"></span>
+  </div>
+
+  <div class="nav">
+    <div class="nav__content">
+      <ul class="nav__list">
+       
+        <li class="nav__list-item"><a href="menuEmpleados.html">EMPLEADOS</a></li>
+        <li class="nav__list-item"><a href="menuClientes.html">CLIENTES</a></li>
+        <li class="nav__list-item"><a href="menuPrincipal.html">VOLVER AL MENU PRINCIPAL</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-content">
+    <h1 class="site-content__headline">CUXSPORTS<br><br>¡Bienvenidos al Menu de Cuentas!<br>Escoge tu Cuenta<br></h1>
+  </div>
+
+  <script>
+    const app = (() => {
+      let body;
+      let menu;
+
+      const init = () => {
+        body = document.querySelector('body');
+        menu = document.querySelector('.menu-icon');
+
+        applyListeners();
+      };
+
+      const applyListeners = () => {
+        menu.addEventListener('click', () => toggleClass(body, 'nav-active'));
+      };
+
+      const toggleClass = (element, stringClass) => {
+        element.classList.toggle(stringClass);
+      };
+
+      init();
+    })();
+  </script>
+</body>
+</html>

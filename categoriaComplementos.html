@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATEGORIA - COMPLEMENTOS</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #b0bec5, #d5dbdb, #d7ccc8 );
+            background-size: 100% 200%;
+            background-position: top;
+            color: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        center {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .offer {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .offer:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #f4a261;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .offer:hover .offer-img {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        .offer-description {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .offer-title {
+            font-size: 24px;
+            color: #d2691e;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .offer-hook {
+            font-size: 16px;
+            color: #6b4226;
+            margin: 10px 0;
+        }
+
+        .cart-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b0000;
+            text-shadow: 1px 1px 5px rgba(139, 0, 0, 0.4);
+        }
+
+        .add-to-cart-btn {
+            background-color: #95c6c0;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(244, 162, 97, 0.3);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #8fb0b9;
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 6px 12px rgba(244, 162, 97, 0.4);
+        }
+
+        .add-to-cart-btn:active {
+            background-color: #8fb0b9;
+            transform: scale(0.95) translateY(2px);
+        }
+
+        .selected {
+            border: 3px solid #f4a261;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(244, 162, 97, 0.7);
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .button {
+            background-color: #71797E;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #B2BEB5;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            background-color: #B2BEB5;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>C U X S P O R T S</h1>
+    <center>CABEZA Y CUELLO</center>
+
+    <div class="product-grid">
+        <!-- Toalla Elite -->
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="toalla_elite_blanca.jpg" alt="Toalla Elite Blanca con Velcro" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Toalla Elite Blanca con Velcro</h2>
+                <p class="offer-hook">Se engancha al cinturón, se usa para secar las manos y mejorar el agarre.</p>
+                <div class="cart-section">
+                    <span class="price">$25.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="toalla_elite_franjas.jpg" alt="Toalla Elite con Franjas del Equipo" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Toalla Elite con Franjas del Equipo</h2>
+                <p class="offer-hook">Personalizada con colores o logos, da identidad visual al jugador.</p>
+                <div class="cart-section">
+                    <span class="price">$28.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toalla Quarterback -->
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="toalla_qb_gris.jpg" alt="Toalla QB Gris Alargada" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Toalla QB Gris Alargada</h2>
+                <p class="offer-hook">Se lleva al frente del cinturón, permite al QB limpiar las manos rápidamente.</p>
+                <div class="cart-section">
+                    <span class="price">$30.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="toalla_qb_frase.jpg" alt="Toalla QB con Frase Motivacional" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Toalla QB con Frase Motivacional</h2>
+                <p class="offer-hook">Estética y funcional, combina estilo y motivación.</p>
+                <div class="cart-section">
+                    <span class="price">$32.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tape -->
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="tape_blanco.jpg" alt="Tape Blanco Tipo Coach" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Tape Blanco Tipo Coach</h2>
+                <p class="offer-hook">Se usa para dar soporte en articulaciones y prevenir lesiones.</p>
+                <div class="cart-section">
+                    <span class="price">$8.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="tape_negro.jpg" alt="Tape Negro de Tela Resistente" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Tape Negro de Tela Resistente</h2>
+                <p class="offer-hook">También se usa para marcar estilo y crear combinaciones con otros accesorios.</p>
+                <div class="cart-section">
+                    <span class="price">$10.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mica -->
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="mica_transparente.jpg" alt="Mica Transparente Reglamentaria" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Mica Transparente Reglamentaria</h2>
+                <p class="offer-hook">Protege los ojos del polvo o contacto directo, sin impedir la visión.</p>
+                <div class="cart-section">
+                    <span class="price">$15.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="offer" onclick="selectProduct(this)">
+            <img src="mica_polarizada.jpg" alt="Mica Polarizada Espejo" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Mica Polarizada Espejo</h2>
+                <p class="offer-hook">Muy llamativa, da un look agresivo y protege del sol, aunque en algunas ligas no está permitida.</p>
+                <div class="cart-section">
+                    <span class="price">$18.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+<div class="offer" onclick="selectProduct(this)">
+            <img src="toalla_qb_gris.jpg" alt="Toalla QB Gris Alargada" class="offer-img">
+            <div class="offer-description">
+                <h2 class="offer-title">Toalla QB Gris Alargada</h2>
+                <p class="offer-hook">Se lleva al frente del cinturón, permite al QB limpiar las manos rápidamente.</p>
+                <div class="cart-section">
+                    <span class="price">$30.00</span>
+                    <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div
+      
+
+    
+       <div class="buttons-container">
+       <button class="button" onclick="window.location.href = 'menuCategorias.html';">Volver a categorías</button>
+            <button class="button" onclick="window.location.href = '#';">Volver al principio</button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function selectProduct(element) {
+            document.querySelectorAll('.offer').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function addToCart(event) {
+            event.stopPropagation();
+            alert("Producto agregado al carrito 🛒");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Detalle Pedido</title>
+	<style>
+		body {
+			background-color: #f1cee4;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		marquee {
+			font-size: 28px;
+			font-weight: bold;
+			color: #8a0253;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		fieldset {
+			width: 55%;
+			border-radius: 25px;
+			border: 2px solid #c87fa1;
+			padding: 20px;
+			background-color: #fff0f5;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+
+		img {
+			border-radius: 15px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+
+		input[type="text"] {
+			width: 60%;
+			padding: 10px;
+			margin: 5px 0;
+			border: 1px solid #c87fa1;
+			border-radius: 8px;
+			font-size: 16px;
+		}
+
+		input[type="submit"], input[type="reset"], input[type="button"] {
+			background-color: #d66aa0;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			margin: 10px;
+			border-radius: 8px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background-color 0.3s, transform 0.2s;
+		}
+
+		input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+			background-color: #b44d83;
+			transform: scale(1.05);
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<br>
+		<marquee scrolldelay="6">D&nbsp;&nbsp;&nbsp; E&nbsp;&nbsp;&nbsp; T&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; L&nbsp;&nbsp;&nbsp; L &nbsp;&nbsp;&nbsp; E&nbsp;&nbsp;&nbsp;</marquee>
+		<br>
+		<form method="POST" action="insertarDetalle.php">
+			<fieldset>
+				<br>
+				<img src="logo.png" width="400" height="400" alt="Imagen">
+				<br><br>
+				ID_DETALLE:<br>
+				<input type="text" name="ID_DETALLE"><br><br>
+
+				ID_PEDIDO:<br>
+				<input type="text" name="ID_PEDIDO"><br><br>
+
+				ID_PRODUCTO:<br>
+				<input type="text" name="ID_PRODUCTO"><br><br>
+
+				CANTIDAD:<br>
+				<input type="text" name="CANTIDAD"><br><br>
+
+				PRECIO_UNITARIO:<br>
+				<input type="text" name="PRECIO_UNITARIO"><br><br>
+
+				SUBTOTAL:<br>
+				<input type="text" name="SUBTOTAL"><br><br>
+
+				<input type="submit" value="ENVIAR DATOS">
+				<input type="reset" value="BORRAR DATOS">
+				<a href="menuDetallePedido.html">
+					<input type="button" name="REGRESAR" value="REGRESAR">
+				</a>
+			</fieldset>
+		</form>
+	</center>
+</body>
+</html>

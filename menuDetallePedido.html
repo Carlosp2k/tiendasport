@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENÚ DE DETALLE DEL PEDIDO </title>
+  <link rel="stylesheet" href="menuClient.css">
+</head>
+<body>
+  <div class="material-menu-wrapper">
+    <div class="material-menu">
+      <div class="material-btn">
+        <div class="material-hamburger">
+          <div class="material-patty"></div>
+          <div class="material-patty"></div>
+          <div class="material-patty"></div>
+        </div>
+      </div>
+      <div class="material-content">
+        <nav>
+          <ul>
+            <li><a href="formDetalle.html">ALTAS</a></li>
+            <li><a href="eliminarDetalle.php">BAJAS</a></li>
+            <li><a href="modificarDetalle.php">MODIFICACIONES</a></li>
+            <li><a href="menuPrincipal.html">REGRESAR</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <p>
+      Bienvenido a los <span class="highlight">DETALLES DE LOS PEDIDOS</span><br> Desliza el boton derecho para ver las opciones
+    </p>
+  </main>
+
+  <script>
+    // Selección de elementos
+    var circle = document.querySelector('.material-btn');
+    var link = document.querySelectorAll('.material-content li');
+    var ham = document.querySelector('.material-hamburger');
+    var main = document.querySelector('main');
+    var content = document.querySelector('.material-content');
+    var win = window;
+
+    // Función para abrir el menú
+    function openMenu(event) {
+      circle.classList.toggle('active');
+      ham.classList.toggle('material-close');
+      main.classList.toggle('active');
+      content.classList.toggle('active');
+      link.forEach(item => item.classList.toggle('active'));
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+
+    // Función para cerrar el menú
+    function closeMenu(event) {
+      if (circle.classList.contains('active') && !event.target.closest('.material-menu')) {
+        circle.classList.remove('active');
+        ham.classList.remove('material-close');
+        main.classList.remove('active');
+        content.classList.remove('active');
+        link.forEach(item => item.classList.remove('active'));
+      }
+    }
+
+    // Eventos
+    circle.addEventListener('click', openMenu, false);
+    win.addEventListener('click', closeMenu, false);
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Empleados</title>
+	<style>
+		body {
+			background-color: #cef1e1;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		marquee {
+			font-size: 30px;
+			color: #054d3b;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		fieldset {
+			width: 55%;
+			border-radius: 25px;
+			border: 2px solid #0e7056;
+			background-color: #ffffffcc;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+			padding: 30px;
+			text-align: center;
+		}
+
+		img {
+			border-radius: 20px;
+			margin-bottom: 20px;
+		}
+
+		input[type="text"] {
+			width: 60%;
+			padding: 10px;
+			margin-top: 5px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			transition: 0.3s ease;
+			outline: none;
+		}
+
+		input[type="text"]:focus {
+			border-color: #0e7056;
+			box-shadow: 0 0 5px #0e7056;
+		}
+
+		label, br {
+			display: block;
+			margin-top: 10px;
+		}
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"] {
+			background-color: #0e7056;
+			color: white;
+			padding: 10px 20px;
+			margin: 10px 5px;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+			font-weight: bold;
+		}
+
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover {
+			background-color: #0a5240;
+			transform: scale(1.05);
+		}
+
+		a input[type="button"] {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+<center>
+	<marquee scrolldelay="6">E &nbsp;&nbsp;&nbsp; M&nbsp;&nbsp;&nbsp; P&nbsp;&nbsp;&nbsp; L&nbsp;&nbsp;&nbsp; E&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp; D&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;</marquee>	
+	<form method="POST" action="insertarEmpleados.php">
+		<fieldset>
+			<img src="logo.png" width="200" height="200">
+			
+			<label>ID_EMPLEADO:</label>
+			<input type="text" name="ID_EMPLEADO">
+			
+			<label>NOMBRE:</label>
+			<input type="text" name="NOMBRE">
+			
+			<label>USUARIO:</label>
+			<input type="text" name="USUARIO">
+			
+			<label>CONTRA:</label>
+			<input type="text" name="CONTRA">
+			
+			<label>EDAD:</label>
+			<input type="text" name="EDAD">
+			
+			<label>CARGO:</label>
+			<input type="text" name="CARGO">
+			
+			<label>NIVEL_ACCESO:</label>
+			<input type="text" name="NIVEL_ACCESO">
+
+			<br><br>
+			<input type="submit" value="ENVIAR DATOS">
+			<input type="reset" value="BORRAR DATOS">
+			<a href="menuEmpleados.html">
+				<input type="button" name="REGRESAR" value="REGRESAR">
+			</a>
+		</fieldset>
+	</form>
+</center>
+</body>
+</html>

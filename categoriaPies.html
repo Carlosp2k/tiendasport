@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATEGORIA- PIES</title>
+    <style>
+        /* Estilos globales */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #b0bec5, #d5dbdb, #d7ccc8 );
+            background-size: 100% 200%;
+            background-position: top;
+            color: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tamaño de las columnas ajustado */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .offer {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .offer:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #f4a261;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .offer:hover .offer-img {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        .offer-description {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .offer-title {
+            font-size: 24px;
+            color: #d2691e;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .offer-hook {
+            font-size: 16px;
+            color: #6b4226;
+            margin: 10px 0;
+        }
+
+        .cart-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b0000;
+            text-shadow: 1px 1px 5px rgba(139, 0, 0, 0.4);
+        }
+
+        .add-to-cart-btn {
+            background-color: #95c6c0;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(244, 162, 97, 0.3);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #8fb0b9;
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 6px 12px rgba(244, 162, 97, 0.4);
+        }
+
+        .add-to-cart-btn:active {
+            background-color: #8fb0b9;
+            transform: scale(0.95) translateY(2px);
+        }
+
+        /* Estilo para el producto seleccionado */
+        .selected {
+            border: 3px solid #f4a261;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(244, 162, 97, 0.7);
+        }
+
+        /* Botones al final */
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .button {
+            background-color: #71797E;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #B2BEB5;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            background-color: #B2BEB5;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <h1>C U X S P O R T S  </h1> <center> <br> CABEZA  Y  CUELLO </center>
+<div class="product-grid">
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="pita.JPG" alt="Pan De Pita" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Pita</h2>
+            <p class="offer-hook">Pan salado tradicional, suave y esponjoso, ideal para acompañar tus comidas.</p>
+            <div class="cart-section">
+                <span class="price">$3.00</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="molde.jpg" alt="Pan De Molde" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Molde</h2>
+            <p class="offer-hook">Suave y esponjoso, ideal para hacer sandwiches o disfrutar con mermelada.</p>
+            <div class="cart-section">
+                <span class="price">$2.80</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="elote.JPG" alt="Pan De Elote" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Elote</h2>
+            <p class="offer-hook">Un pan suave con un toque de elote, ligeramente dulce y perfecto para cualquier hora del día.</p>
+            <div class="cart-section">
+                <span class="price">$2.00</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="bolillo.jpg" alt="Bolillo" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Bolillo</h2>
+            <p class="offer-hook">El pan perfecto para acompañar sopas o guisos, con una corteza crujiente y miga esponjosa.</p>
+            <div class="cart-section">
+                <span class="price">$2.20</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="ba.jpg" alt="Baguette" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Bagguete</h2>
+            <p class="offer-hook">Pan largo y crujiente, ideal para acompañar quesos o hacer deliciosos sandwiches.</p>
+            <div class="cart-section">
+                <span class="price">$2.50</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="cia.jpg" alt="Pan Ciabatta" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan Ciabatta</h2>
+            <p class="offer-hook">Pan italiano con una corteza crujiente y miga aireada, ideal para acompañar ensaladas o sopas.</p>
+            <div class="cart-section">
+                <span class="price">$2.80</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="in.jpg" alt="Pan Integral" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan Integral</h2>
+            <p class="offer-hook">Pan nutritivo hecho con harina integral, ideal para los amantes de lo saludable.</p>
+            <div class="cart-section">
+                <span class="price">$2.50</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="cen.jpg" alt="Pan De Centeno" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Centeno</h2>
+            <p class="offer-hook">Con un sabor único, este pan es ideal para acompañar quesos curados o carnes frías.</p>
+            <div class="cart-section">
+                <span class="price">$2.60</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="ave.jpg" alt="Pan De Avena" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Avena</h2>
+            <p class="offer-hook">Delicioso pan con avena, perfecto para un desayuno saludable o acompañar tu café.</p>
+            <div class="cart-section">
+                <span class="price">$2.30</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="ham.jpg" alt="Pan Para Hamburguesa" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan Para Hamburguesa</h2>
+            <p class="offer-hook">El pan suave y esponjoso ideal para preparar tus hamburguesas caseras.</p>
+            <div class="cart-section">
+                <span class="price">$2.40</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="foca.jpg" alt="Focaccia" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Focaccia</h2>
+            <p class="offer-hook">Pan italiano con romero y aceite de oliva, perfecto para acompañar tus platillos favoritos.</p>
+            <div class="cart-section">
+                <span class="price">$2.60</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="oli.jpg" alt="Pan De Oliva" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Oliva</h2>
+            <p class="offer-hook">Con un toque de aceitunas, este pan es ideal para acompañar platos mediterráneos.</p>
+            <div class="cart-section">
+                <span class="price">$2.80</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="ajo.jpg" alt="Pan De Ajo" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Ajo</h2>
+            <p class="offer-hook">Un delicioso pan con un toque de ajo, perfecto para acompañar sopas o carnes.</p>
+            <div class="cart-section">
+                <span class="price">$2.40</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="tom.jpg" alt="Pan De Tomate" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Tomate</h2>
+            <p class="offer-hook">Un pan sabroso con tomate seco, ideal para acompañar tus ensaladas o pastas.</p>
+            <div class="cart-section">
+                <span class="price">$2.50</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="offer" onclick="selectProduct(this)">
+        <img src="cebo.jpg" alt="Pan De Cebolla" class="offer-img">
+        <div class="offer-description">
+            <h2 class="offer-title">Pan De Cebolla</h2>
+            <p class="offer-hook">Pan suave con un toque de cebolla, ideal para acompañar carnes a la parrilla.</p>
+            <div class="cart-section">
+                <span class="price">$2.50</span>
+                <button class="add-to-cart-btn" onclick="addToCart(event)">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Botones al final -->
+    <div class="buttons-container">
+        <button class="button" onclick="window.location.href = 'menuCategorias.html';">Volver a categorías</button>
+        <button class="button" onclick="window.location.href = '#';">Volver al principio</button>
+    </div>
+    <br><br>
+    <script>
+        function selectProduct(element) {
+            document.querySelectorAll('.offer').forEach(offer => {
+                offer.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+
+        function addToCart(event) {
+            // Prevenir que el evento de clic se propague al padre (div .offer)
+            event.stopPropagation();
+
+            // Obtener el botón de agregar al carrito
+            const button = event.target;
+            const product = button.closest('.offer');
+            
+            // Obtener las coordenadas del botón en la página
+            const buttonRect = button.getBoundingClientRect();
+        }
+    </script>
+</body>
+</html>
+
