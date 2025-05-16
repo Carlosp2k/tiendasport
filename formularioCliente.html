@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>formCliente</title>
+	<style>
+		body {
+			background-color: #ffcabf;
+			font-family: 'Ink Free', cursive;
+			margin: 0;
+			padding: 0;
+		}
+
+		marquee {
+			font-size: 3rem;
+			color: #7a2f18;
+			text-shadow: 2px 2px #ffd7cf;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		fieldset {
+			width: 35%;
+			margin: auto;
+			background-color: #ffe2db; /* color similar al fondo */
+			border: 3px solid #7a2f18;
+			border-radius: 25px;
+			padding: 20px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+		}
+
+		fieldset img {
+			display: block;
+			margin: 0 auto 20px auto;
+		}
+
+		input[type="text"] {
+			width: 80%;
+			padding: 8px;
+			margin-top: 5px;
+			text-align: center;
+			border: 2px solid #a67c73;
+			border-radius: 10px;
+			font-size: 1rem;
+			transition: 0.3s;
+			background-color: #fff4f1;
+		}
+
+		input[type="text"]:focus {
+			border-color: #ff8a80;
+			background-color: #ffe9e5;
+			outline: none;
+		}
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"] {
+			margin: 10px 10px 0 10px;
+			padding: 10px 20px;
+			background-color: #ffc4b2; /* botones color pastel similar */
+			border: none;
+			border-radius: 15px;
+			font-size: 1rem;
+			font-weight: bold;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #ff9f8a;
+		}
+
+		input[type="reset"]:hover {
+			background-color: #ffa4a4;
+		}
+
+		input[type="button"]:hover {
+			background-color: #ffb6a3;
+		}
+	</style>
+</head>
+<body>
+	<font face="Ink Free" size="10"><b>
+	<center>
+		<br>
+		<marquee scrolldelay="6">C&nbsp;&nbsp;&nbsp; L&nbsp;&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp; E&nbsp;&nbsp;&nbsp; N&nbsp;&nbsp;&nbsp; T&nbsp;&nbsp;&nbsp; E&nbsp;&nbsp;&nbsp;</marquee>
+	</font>
+	<br>
+	<font face="Ink Free" size="4"><b>
+	<form method="POST" action="insertarCliente.php">
+		<fieldset>
+			<img src="logo.png" width="300" height="300">
+			<br>
+			ID_CLIENTE: <br>
+			<input type="text" name="ID_CLIENTE">
+			<br><br>
+			NOMBRE: <br>
+			<input type="text" name="NOMBRE">
+			<br><br>
+			CORREO: <br>
+			<input type="text" name="CORREO">
+			<br><br>
+			CONTRA: <br>
+			<input type="text" name="CONTRA">
+			<br><br>
+			TELEFONO: <br>
+			<input type="text" name="TELEFONO">
+			<br><br>
+			DIRECCION_ENVIO: <br>
+			<input type="text" name="DIRECCION_ENVIO">
+			<br><br>
+			FECHA_REGISTRO: <br>
+			<input type="text" name="FECHA_REGISTRO">
+			<br><br>
+			<input type="submit" value="ENVIAR DATOS">
+			<input type="reset" value="BORRAR DATOS">
+			<a href="menuClientes.html">
+				<input type="button" name="REGRESAR" value="REGRESAR">
+			</a>
+		</fieldset>
+	</form>
+	</center>
+</body>
+</html>
